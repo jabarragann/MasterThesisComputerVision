@@ -1,0 +1,7 @@
+#Extensions to ignore
+*.avi
+*.npy
+*.pickle
+*.png
+/.idea
+/src/models
