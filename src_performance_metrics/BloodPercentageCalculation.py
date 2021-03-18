@@ -22,7 +22,7 @@ class SemanticSegmentationModel:
         self.means = np.array([103.939, 116.779, 123.68]) / 255.
 
         #Load model
-        model_path = "./../src/models/FCNs-BCEWithLogits_batch2_epoch250_RMSprop_scheduler-step50-gamma0.5_lr0.0001_momentum0_w_decay1e-05"
+        model_path = "../src/models/trainRound2/FCNs-BCEWithLogits_batch2_epoch250_RMSprop_scheduler-step50-gamma0.5_lr0.0001_momentum0_w_decay1e-05"
         self.model = torch.load(model_path)
         use_gpu = torch.cuda.is_available()
         if use_gpu:
@@ -84,8 +84,8 @@ class SemanticSegmentationModel:
 if __name__ == "__main__":
     debug = False
     bloodCode  = 230+20+20
-    videoPath = r'C:\Users\asus\Downloads\2021-03-08_Alfredo_collection_1\2021-03-08_19h.01m.51s_AlfredoManual_02\00_video_right_color.avi'
-    videoPath = Path(videoPath)
+    videoPath = r'C:\Users\asus\OneDrive - purdue.edu\ThesisDataset\03-PauCollection\2021-03-12_12h.57m.43s_pau_automy01'
+    videoPath = Path(videoPath) / '00_video_right_color.avi'
     cap = cv2.VideoCapture(str(videoPath)) #Open cv not compatible with pathlib objects
 
     # Check if camera opened successfully
